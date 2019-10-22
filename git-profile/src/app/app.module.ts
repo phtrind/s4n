@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProfileContainerComponent } from './containers/profile-container/profile-container.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserRegisterComponent } from './components/user-register/user-register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProfileContainerComponent
+    ProfileContainerComponent,
+    UserRegisterComponent
   ],
   imports: [
     BrowserModule,
