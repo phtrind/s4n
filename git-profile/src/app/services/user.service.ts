@@ -9,9 +9,17 @@ export class UserService {
 
   constructor(private cookieService: CookieService) { }
 
+  getUser(): User {
+    const str = this.cookieService.get('user');
+
+    if (str && str.length > 0) {
+      return JSON.parse(str);
+    }
+
+    return null;
+  }
+
   saveUser(user: User): void {
-    console.log(JSON.parse(this.cookieService.get('user')));
-    console.log(JSON.stringify(user));
     this.cookieService.set('user', JSON.stringify(user));
   }
 }
