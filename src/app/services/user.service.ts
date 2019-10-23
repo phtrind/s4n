@@ -13,7 +13,18 @@ export class UserService {
     const str = this.cookieService.get('user');
 
     if (str && str.length > 0) {
-      return JSON.parse(str);
+      const usr = JSON.parse(str);
+
+      const user: User = {
+        birthDate: usr.birthDate ? new Date(usr.birthDate) : null,
+        document: usr.document,
+        email: usr.email,
+        name: usr.nome,
+        surname: usr.surname,
+        username: usr.username
+      };
+
+      return user;
     }
 
     return null;
