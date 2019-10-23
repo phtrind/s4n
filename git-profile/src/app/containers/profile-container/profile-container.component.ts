@@ -19,12 +19,26 @@ export class ProfileContainerComponent implements OnInit {
     this.gitService.repositories$.subscribe(x => {
       this.repositories = x;
     });
+
+    this.verifyUserCookie();
   }
 
   saveUser(user: User): void {
     this.userService.saveUser(user);
+    this.setUser(user);
+  }
+
+  setUser(user: User) {
     this.user = user;
     this.gitService.fetchRepositories(user.username);
+  }
+
+  verifyUserCookie(): void {
+    const user = this.userService.getUser();
+
+    if (user) {
+      this.setUser(user);
+    }
   }
 
 }
