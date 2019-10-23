@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,7 +9,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserRegisterComponent } from './components/user-register/user-register.component';
 import { HeaderComponent } from './components/header/header.component';
 
-import {MatToolbarModule} from '@angular/material/toolbar';
+import {
+  MatToolbarModule,
+  MatInputModule,
+  MatButtonModule,
+  MatDatepickerModule,
+  MatNativeDateModule
+} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -21,10 +28,17 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     // angular-material
-    MatToolbarModule
+    MatToolbarModule,
+    MatInputModule,
+    MatButtonModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
-  providers: [],
+  providers: [
+    MatDatepickerModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,3 +1,31 @@
-<p>
-  user-register works!
-</p>
+<div class="p-3">
+  <form class="example-form">
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Name" [(ngModel)]="name" name="name">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Surname" [(ngModel)]="surname" name="surname">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Document" [(ngModel)]="document" name="document">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <input matInput [matDatepicker]="picker" placeholder="Birth Date" [(ngModel)]="birthDate" name="birthDate">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Email" [(ngModel)]="email" name="email">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Github User" [(ngModel)]="user" name="user">
+    </mat-form-field>
+  </form>
+
+  <button mat-raised-button color="primary" class="col-12" (click)="onSaveClick($event)">Save</button>
+</div>

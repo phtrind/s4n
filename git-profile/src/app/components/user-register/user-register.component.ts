@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { User } from 'src/app/interfaces/user';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-user-register',
@@ -8,6 +9,12 @@ import { User } from 'src/app/interfaces/user';
 })
 export class UserRegisterComponent implements OnInit {
   @Output() saveClick = new EventEmitter<User>();
+  name: string;
+  surname: string;
+  document: string;
+  birthDate: Date;
+  email: string;
+  user: string;
 
   constructor() { }
 
@@ -20,16 +27,18 @@ export class UserRegisterComponent implements OnInit {
     this.saveClick.emit(user);
   }
 
-  // Develop the binding
   getUserInfo(): User {
-    return {
-      name: 'Pedro',
-      surname: 'Trindade',
-      document: 'document',
-      birthDate: new Date(),
-      email: 'phtrind@hotmail.com',
-      user: 'phtrind'
+    const user: User = {
+      name: this.name,
+      surname: this.surname,
+      document: this.document,
+      birthDate: this.birthDate,
+      email: this.email,
+      user: this.user
     };
-  }
 
+    console.log(user);
+
+    return user;
+  }
 }
