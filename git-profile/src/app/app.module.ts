@@ -9,6 +9,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserRegisterComponent } from './components/user-register/user-register.component';
 import { HeaderComponent } from './components/header/header.component';
 
+import { CookieService } from 'ngx-cookie-service';
+
 import {
   MatToolbarModule,
   MatInputModule,
@@ -37,7 +39,8 @@ import {
     MatNativeDateModule
   ],
   providers: [
-    MatDatepickerModule
+    MatDatepickerModule,
+    CookieService
   ],
   bootstrap: [AppComponent]
 })

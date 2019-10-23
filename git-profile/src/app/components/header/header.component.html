@@ -1,5 +1,24 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    
+    <div class="row col-12" *ngIf="this.user">
+      <div class="col-2 text-center" *ngIf="this.user.name">
+        <span>Name: {{ user.name }}</span>
+      </div>
+      <div class="col-2 text-center" *ngIf="this.user.surname">
+        <span>Surname: {{ user.surname }}</span>
+      </div>
+      <div class="col-2 text-center" *ngIf="this.user.document">
+        <span>Document: {{ user.document }}</span>
+      </div>
+      <div class="col-2 text-center" *ngIf="this.user.birthDate">
+        <span>Birth Date: {{ user.birthDate.toDateString() }}</span>
+      </div>
+      <div class="col-2 text-center" *ngIf="this.user.email">
+        <span>Email: {{ user.email }}</span>
+      </div>
+      <div class="col-2 text-center" *ngIf="this.user.username">
+        <span>User: {{ user.username }}</span>
+      </div>
+    </div>
   </mat-toolbar-row>
 </mat-toolbar>

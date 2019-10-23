@@ -14,7 +14,7 @@ export class UserRegisterComponent implements OnInit {
   document: string;
   birthDate: Date;
   email: string;
-  user: string;
+  username: string;
 
   constructor() { }
 
@@ -22,23 +22,18 @@ export class UserRegisterComponent implements OnInit {
   }
 
   onSaveClick(event: Event): void {
-    const user: User = this.getUserInfo();
     event.stopPropagation();
-    this.saveClick.emit(user);
+    this.saveClick.emit(this.getUserInfo());
   }
 
   getUserInfo(): User {
-    const user: User = {
+    return {
       name: this.name,
       surname: this.surname,
       document: this.document,
       birthDate: this.birthDate,
       email: this.email,
-      user: this.user
+      username: this.username
     };
-
-    console.log(user);
-
-    return user;
   }
 }

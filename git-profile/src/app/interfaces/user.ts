@@ -4,5 +4,5 @@ export interface User {
     document: string;
     birthDate: Date;
     email: string;
-    user: string;
+    username: string;
 }
