@@ -10,8 +10,6 @@ export class UserService {
   constructor(private cookieService: CookieService) { }
 
   saveUser(user: User): void {
-    console.log(JSON.parse(this.cookieService.get('user')));
-    console.log(JSON.stringify(user));
     this.cookieService.set('user', JSON.stringify(user));
   }
 }

@@ -1,0 +1,45 @@
+<div class="p-3">
+  <div>
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+  </div>
+
+  <mat-table [dataSource]="dataSource" class="full-width" matSort>
+
+    <!-- Language Column -->
+    <ng-container matColumnDef="language">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Language </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.language}} </mat-cell>
+    </ng-container>
+
+    <!-- Default Branch Column -->
+    <ng-container matColumnDef="defaultBranch">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Default Branch </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.defaultBranch}} </mat-cell>
+    </ng-container>
+
+    <!-- Url Column -->
+    <ng-container matColumnDef="urlGit">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Url </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.urlGit}} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+    </ng-container>
+
+    <!-- Description Column -->
+    <ng-container matColumnDef="description">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Description </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.description}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+  <mat-paginator [pageSize]="5"></mat-paginator>
+</div>
